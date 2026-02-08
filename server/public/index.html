@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Voice Command</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Voice Control Center</h1>
+        <div class="status-panel">
+            <div class="device-card">
+                <span class="label">Light</span>
+                <span id="light-status" class="status off">OFF</span>
+            </div>
+            <div class="device-card">
+                <span class="label">Fan</span>
+                <span id="fan-status" class="status off">OFF</span>
+            </div>
+        </div>
+
+        <div class="voice-section">
+            <button id="mic-btn" class="mic-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                </svg>
+            </button>
+            <p id="transcript">Tap microphone and speak...</p>
+        </div>
+
+        <div class="manual-controls">
+            <div class="control-group">
+                <h3>Light Control</h3>
+                <button onclick="processCommand('turn on light')" class="btn-control on">Turn ON</button>
+                <button onclick="processCommand('turn off light')" class="btn-control off">Turn OFF</button>
+            </div>
+            <div class="control-group">
+                <h3>Fan Control</h3>
+                <button onclick="processCommand('turn on fan')" class="btn-control on">Turn ON</button>
+                <button onclick="processCommand('turn off fan')" class="btn-control off">Turn OFF</button>
+            </div>
+        </div>
+
+        <div class="commands-list">
+            <p>Try saying:</p>
+            <span class="pill">"Turn on light"</span>
+            <span class="pill">"Turn off light"</span>
+            <span class="pill">"Turn on fan"</span>
+            <span class="pill">"Turn off fan"</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
